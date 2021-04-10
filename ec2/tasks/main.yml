@@ -36,7 +36,7 @@
     # wait_timeout: 300
   register: ec2_instance
 
-- name: Add new.foo.com as an A record with 3 IPs and wait until the changes have been replicated
+- name: Add DNS A recordset
   community.aws.route53:
     state: present
     zone: '{{ ec2.domain_name }}'
