@@ -1,7 +1,9 @@
 # Ansible Role: OBS Ninja
 
-**Table Of Contents**
+## Table Of Contents
+
 - [Ansible Role: OBS Ninja](#ansible-role-obs-ninja)
+  - [Table Of Contents](#table-of-contents)
   - [Overview](#overview)
     - [Inspiration](#inspiration)
     - [About OBS Ninja](#about-obs-ninja)
@@ -34,30 +36,30 @@ OBS.Ninja is a software that uses peer-to-peer technology to bring remote camera
 
 ## Tasks performed
 
-* Infrastructure
-  * create security groups for your instance
-  * Creates your Ec2 instance to install obs ninja
-  * Creates the dns record set pointing to your instance ip.
-* Obs Instalation
-  * Apply the latest updates and security patches to the instance Operating system.
-  * Install all dependencies needed
-  * Creates an SSL certificate, installs and configure it.
-  * Download and install Obs Ninja from sources
+- Infrastructure
+  - create security groups for your instance
+  - Creates your Ec2 instance to install obs ninja
+  - Creates the dns record set pointing to your instance ip.
+- Obs Instalation
+  - Apply the latest updates and security patches to the instance Operating system.
+  - Install all dependencies needed
+  - Creates an SSL certificate, installs and configure it.
+  - Download and install Obs Ninja from sources
 
 ## Requeriments
 
-* aws cli
-* ansible
-* ansible galaxy collections
-  * amazon.aws
-  * community.aws
+- aws cli
+- ansible
+- ansible galaxy collections
+  - amazon.aws
+  - community.aws
 
 ## Role Variables
 
 This Playbook contains two Roles:
 
-* Ec2: This role provision an ec2 instance, security groups, and dns recordsets for your OBS ninja, so it takes care of everything for you.
-* obsninja: This Role installs and configure Obs on the instance provided by the Ec2 role or can work stand alone to do the same with instance with ubuntu 20.04 already created you have to provide the inventory.
+- Ec2: This role provision an ec2 instance, security groups, and dns recordsets for your OBS ninja, so it takes care of everything for you.
+- obsninja: This Role installs and configure Obs on the instance provided by the Ec2 role or can work stand alone to do the same with instance with ubuntu 20.04 already created you have to provide the inventory.
 
 ### Ec2 Role
 
@@ -121,16 +123,16 @@ vars:
 
 This is a full example, please update it with your valid configurations:
 
-* _ec2_
-  * profile
-  * key_name
-  * vpc_id
-  * subnet_id
-  * server_name
-  * domain_name
-* _obsninja_
-  * server_name
-  * admin_email
+- _ec2_
+  - profile
+  - key_name
+  - vpc_id
+  - subnet_id
+  - server_name
+  - domain_name
+- _obsninja_
+  - server_name
+  - admin_email
 
 ```ansible
 ---
