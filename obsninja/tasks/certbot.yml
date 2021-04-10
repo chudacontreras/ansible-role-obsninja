@@ -1,0 +1,33 @@
+- name: Install Snap Core
+  community.general.snap:
+    name:
+      - core
+
+- name: Install Certbot
+  community.general.snap:
+    name: certbot
+    classic: yes
+
+- name: Create Certbot symlink
+  ansible.builtin.file:
+    src: /snap/bin/certbot
+    dest: /usr/bin/certbot
+    owner: root
+    group: root
+    state: link
+
+- name: Create SSL certificates
+  ansible.builtin.shell: |
+    certbot  --nginx \
+      --non-interactive \
+      --agree-tos \
+      -m '{{ obsninja.admin_email }}' \
+      -d '{{ obsninja.server_name }}'
+
+- name: Add cron job for certbot renewal.
+  cron:
+    name: Certbot automatic renewal.
+    job: "certbot renew --quiet"
+    minute: "0"
+    hour: "0"
+    user: "root"

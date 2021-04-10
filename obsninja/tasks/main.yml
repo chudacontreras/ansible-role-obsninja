@@ -1,0 +1,12 @@
+---
+- name: Update apt
+  import_tasks: update_apt.yml
+
+- name: Setup Nginx
+  import_tasks: nginx.yml
+
+- name: Install Obs Ninja
+  import_tasks: obsninja.yml
+
+- name: Install Certbot
+  import_tasks: certbot.yml

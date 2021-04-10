@@ -1,0 +1,26 @@
+- name: Git clone OBS Ninja
+  ansible.builtin.git:
+    repo: 'https://github.com/steveseguin/obsninja.git'
+    dest: "{{ obsninja.site_root }}"
+    version: '16.4'
+
+- name: Install ObsNinja nginx config
+  template:
+    src: obsninja.nginx.j2
+    dest: /etc/nginx/sites-available/obsninja
+    owner: root
+    group: root
+    mode: 0644
+
+- name: Enable ObsNinja site
+  ansible.builtin.file:
+    src: /etc/nginx/sites-available/obsninja
+    dest: /etc/nginx/sites-enabled/obsninja
+    owner: root
+    group: root
+    state: link
+
+- name: Reload nginx
+  service:
+    name: nginx
+    state: restarted
