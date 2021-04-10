@@ -13,6 +13,7 @@
   - [Playbook Example](#playbook-example)
   - [Caveats](#caveats)
   - [MIT License](#mit-license)
+  - [Author Information](#author-information)
 
 ## Overview
 
@@ -187,3 +188,7 @@ furnished to do so, subject to the following conditions:
 The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
 
 THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND  NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+
+## Author Information
+
+This project was created in 2021 by [Damian Antonio Gitto Olguin](https://www.linkedin.com/in/damianolguin), [AWS Community Hero](https://aws.amazon.com/es/developer/community/heroes/damian-olguin/), Founder of [Teracloud LLC](https://teracloud.io/).
