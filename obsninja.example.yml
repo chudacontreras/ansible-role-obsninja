@@ -1,0 +1,34 @@
+---
+- hosts: localhost
+  connection: local
+  gather_facts: true
+
+  vars:
+    ec2:
+      profile: "<<REPLACE_ME>>"
+      region: "us-west-2"
+      instance_name: "Obs Ninja"
+      ami_id: "ami-0ca5c3bd5a268e7db"
+      key_name: "<<REPLACE_ME>>"
+      instance_type: "t3.micro"
+      volume_size: "10"
+      vpc_id: "vpc-<<REPLACE_ME>>"
+      subnet_id: "subnet-<<REPLACE_ME>>"
+      server_name: "obsninja"
+      domain_name: "<<REPLACE_ME>>"
+
+  roles:
+    - ec2
+
+# Stage two
+- hosts: launched
+  become: yes
+  gather_facts: true
+
+  vars:
+    obsninja:
+      server_name: "obsninja.<<REPLACE_ME>>"
+      site_root: "/var/www/obs"
+      admin_email: <<REPLACE_ME>>
+  roles:
+    - obsninja
