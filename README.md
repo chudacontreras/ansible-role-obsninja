@@ -28,6 +28,7 @@ Inspired on [The AWS Blogger (Jon Myer)](https://www.youtube.com/c/TheAWSBlogger
 
 OBS.Ninja is a software that uses peer-to-peer technology to bring remote cameras into OBS, created by [Steven Seguin](https://github.com/steveseguin) [@xyster](https://twitter.com/xyster)
 
+[Official OBS.Ninja website](https://obs.ninja)
 [Official OBS.Ninja repository](https://github.com/steveseguin/obsninja)
 
 ## Tasks performed
