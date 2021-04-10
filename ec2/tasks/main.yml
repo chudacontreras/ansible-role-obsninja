@@ -32,7 +32,6 @@
     instance_type: '{{ ec2.instance_type }}'
     image_id: "{{ ec2.ami_id }}"
     security_group: '{{ ec2_sg.group_id }}'
-    instance_role: "AmazonSSMRoleForInstancesQuickSetup"
     wait: yes
     # wait_timeout: 300
   register: ec2_instance
